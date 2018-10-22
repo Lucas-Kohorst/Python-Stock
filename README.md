@@ -1,3 +1,5 @@
+Predicting stock prices from Yahoo stock screener using scikit-learn and sending the predicitons via smtplib to a phone number. 
+
 Imports needed:
 
 1. numpy
@@ -9,4 +11,4 @@ Imports needed:
 7. iexfinance
 
 
-You will also need to download the chromedriver so selenium can work properly. It can be downloaded here
+You will also need to download the chromedriver so selenium can work properly. It can be downloaded [https://sites.google.com/a/chromium.org/chromedriver/](here)
