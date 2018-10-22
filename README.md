@@ -11,4 +11,4 @@ Imports needed:
 7. iexfinance
 
 
-You will also need to download the chromedriver so selenium can work properly. It can be downloaded [https://sites.google.com/a/chromium.org/chromedriver/](here)
+You will also need to download the chromedriver so selenium can work properly. It can be downloaded [here](https://sites.google.com/a/chromium.org/chromedriver/)
