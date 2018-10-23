@@ -1,4 +1,4 @@
-Predicting stock prices from Yahoo stock screener using scikit-learn and sending the predicitons via smtplib to a phone number. 
+Predicting stock prices from Yahoo stock screener using scikit-learn and sending the predicitons via smtplib to a phone number. Time series analysis (Linear Regression) is used, **sciki-learn**, to predict the future prices from the stock tickers.
 
 Imports needed:
 
