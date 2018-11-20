@@ -1,15 +1,13 @@
 import numpy as np
 from datetime import datetime
 import smtplib
-import time
 from selenium import webdriver
 
 #For Prediction
 from sklearn.linear_model import LinearRegression
-from sklearn import preprocessing, cross_validation, svm
+from sklearn import preprocessing, cross_validation
 
 #For Stock Data
-from iexfinance import Stock
 from iexfinance import get_historical_data
 
 def getStocks(n):
@@ -26,7 +24,6 @@ def getStocks(n):
         ticker = driver.find_element_by_xpath(
             '//*[@id = "scr-res-table"]/div[2]/table/tbody/tr[' + str(i) + ']/td[1]/a')
         stock_list.append(ticker.text)
-
     driver.quit()
     
     #Using the stock list to predict the future price of the stock a specificed amount of days
@@ -79,7 +76,7 @@ def predictData(stock, days):
     Y = np.array(df['prediction'])
     X = preprocessing.scale(X)
     X_prediction = X[-forecast_time:]
-    X_train, X_test, Y_train, Y_test = cross_validation.train_test_split(
+    X_train, Y_train, Y_test = cross_validation.train_test_split(
         X, Y, test_size=0.5)
 
     #Performing the Regression on the training data
