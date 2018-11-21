@@ -37,6 +37,9 @@ def getStocks(n):
         number += 1
 
 def sendMessage(text):
+    # If you're using Gmail to send the message, you might need to 
+    # go into the security settings of your email account and 
+    # enable the "Allow less secure apps" option 
     username = "EMAIL"
     password = "PASSWORD"
 
@@ -62,9 +65,12 @@ def predictData(stock, days):
     end = datetime.now()
 
     #Outputting the Historical data into a .csv for later use
-    df = get_historical_data(
-        stock, start=start, end=end, output_format='pandas')
-    csv_name = ('Exports/' + stock + '_Export.csv')
+    df = get_historical_data(stock, start=start, end=end, output_format='pandas')
+    if os.path.exists('./Exports'):
+        csv_name = ('Exports/' + stock + '_Export.csv')
+    else:
+        os.mkdir("Exports")
+        csv_name = ('Exports/' + stock + '_Export.csv')
     df.to_csv(csv_name)
     df['prediction'] = df['close'].shift(-1)
     df.dropna(inplace=True)
