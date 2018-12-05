@@ -2,6 +2,7 @@ import numpy as np
 from datetime import datetime
 import smtplib
 from selenium import webdriver
+import os
 
 #For Prediction
 from sklearn.linear_model import LinearRegression
